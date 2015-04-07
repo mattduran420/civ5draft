@@ -1,10 +1,15 @@
-<form action="game.html">
-	Create a Game<br/>
-	<input type="submit" value="Create">
-</form>
-
-<form action="game.html">
-	Join a Game<br/>
-	<input type="text" placeholder="game id">
-	<input type="submit" value="join">
-</form>
+<div class="container" style="border:1px solid #000">
+	<h2 class="form-signin-heading">Please sign in</h2>
+	<button class="btn btn-success" ng-click="createGame();">CREATE GAME</button>
+	<h3>OR</h3>
+	<div class="col-lg-6">
+	    <form class="">
+		    <div class="input-group">
+		      <input type="text" class="form-control" ng-model="gameid" name="gameID" placeholder="Game ID">
+		      <span class="input-group-btn">
+		        <button class="btn btn-default" type="button" ng-click="joinGame()">Join</button>
+		      </span>
+		    </div>
+	    </form>
+	</div>
+</div>

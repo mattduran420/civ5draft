@@ -1,0 +1,67 @@
+<h1>Settings</h1>
+<form>
+	<div class="row">
+		<div class="col-md-8">
+			<h3>Globally Banned Teams</h3>
+			<div style="border:1px solid #000">
+				<button ng-repeat="civ in globalBans" ng-click="globalUnban($index)" class="btn label label-default" style="margin:3px; display:inline-block">
+					<img src="{{civ.image}}" height="16px"> {{civ.name}}
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<h3>Bannable Civs</h3>
+			<div style="border:1px solid #000">
+				<button ng-repeat="civ in bannableCivs" class="btn label label-info" style="margin:3px; display:inline-block" ng-click="globalBan($index)">
+					<img src="{{civ.image}}" height="16px"> {{civ.name}}
+				</button>
+			</div>
+		</div>
+	</div>
+	Number of Players:
+	<select name="playerCount" ng-model="playerCount">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+	</select><br/>
+	Number of Bans Per Player:
+	<select name="banCount" ng-model="banCount">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+	</select><br/>
+	Number of Picks Per Player:
+	<select name="pickCount" ng-model="pickCount">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+	</select>
+	<br/>
+	Create a Game<br/>
+	<input type="submit" class="btn btn-success" ng-click="createGame()" value="Create">
+</form>
+
+<!--
+lead player needs eject button
+cookie stored with name and game id
+when game ends, cookie is destroyed
+
+
+-->

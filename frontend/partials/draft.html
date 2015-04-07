@@ -3,13 +3,17 @@
 	<div class="col-md-6">
 		<h3>Globally Banned Teams</h3>
 		<div style="border:1px solid #000">
-			Babylon, Korea, Persia, England
+			<button disabled ng-repeat="civ in globalBans" class="btn label label-default" style="margin:3px; display:inline-block">
+				<img src="{{civ.image}}" height="16px"> {{civ.name}}
+			</button>
 		</div>
 	</div>
 	<div class="col-md-6">
 		<h3>Player Banned Pool</h3>
 		<div style="border:1px solid #000">
-			Japan, Maya, Askia
+			<button ng-repeat="civ in playerBans" class="btn label label-info" style="margin:3px; display:inline-block" ng-click="unban($index)">
+				<img src="{{civ.image}}" height="16px"> {{civ.name}}
+			</button>
 		</div>
 	</div>
 </div>
@@ -17,7 +21,12 @@
 	<div class="col-md-12">
 		<h3>All Bans</h3>
 		<div style="border:1px solid #000">
-			Babylon, Korea, Persia, England
+			<button disabled ng-repeat="civ in globalBans" class="btn label label-default" style="margin:3px; display:inline-block">
+				<img src="{{civ.image}}" height="16px"> {{civ.name}}
+			</button>
+			<button ng-repeat="civ in playerBans" class="btn label label-info" style="margin:3px; display:inline-block" ng-click="unban($index)">
+				<img src="{{civ.image}}" height="16px"> {{civ.name}}
+			</button>
 		</div>
 	</div>
 </div>
@@ -34,7 +43,9 @@
 	<div class="col-md-8">
 		<h3>Bannable Civs</h3>
 		<div style="border:1px solid #000">
-			Babylon<br/>Korea<br/>Persia<br/>England
+			<button ng-repeat="civ in bannableCivs" class="btn label label-info" style="margin:3px; display:inline-block" ng-click="ban($index)">
+				<img src="{{civ.image}}" height="16px"> {{civ.name}}
+			</button>
 		</div>
 	</div>
 </div>
